@@ -1,0 +1,36 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(èöâáøÿÿÿÿ
+E
+java:S3740"/Provide the parametrized type for this generic.(×è¸–
+E
+java:S3740"/Provide the parametrized type for this generic.(ñªò 
+J
+java:S3740"/Provide the parametrized type for this generic.(ƒÀÒëüÿÿÿÿ
+n
+java:S2293<"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ÊØ
+C
+java:S1604{"(Make this anonymous inner class a lambda(ÎÃßÓüÿÿÿÿ
+p
+java:S1104;"ZMake observableList a static final constant or non-public and provide accessors if needed.(Ù½©Æ
+œ
+java:S1186A"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(È’Êøÿÿÿÿ
+r
+java:S1450="WRemove the "menuData" field and declare it as a local variable in the relevant methods.(³£–øÿÿÿÿ
+L
+java:S26965"6Make the enclosing method "static" or remove this set.(ûĞ¸—
+K
+java:S22095"5Change this instance-reference to a static reference.(ûĞ¸—
+V	java:S125="<This block of commented-out lines of code should be removed.(³£–øÿÿÿÿ
+G
+java:S1602[",Remove useless curly braces around statement(ÇË®ûùÿÿÿÿ
+@	java:S106f"+Replace this use of System.out by a logger.(ú•€Ë
+@	java:S106g"+Replace this use of System.out by a logger.(ÑºŠ‰
+@	java:S106h"+Replace this use of System.out by a logger.(¢ùù
+@	java:S106i"+Replace this use of System.out by a logger.(ú•€Ë
+P
+java:S2209k"5Change this instance-reference to a static reference.(…î˜±ÿÿÿÿÿ
+H
+java:S1602ˆ",Remove useless curly braces around statement(¸¯¥–úÿÿÿÿ
+O
+java:S1128"4Remove this unused import 'pizzashop.gui.OrdersGUI'.(¿ëÇÈøÿÿÿÿ

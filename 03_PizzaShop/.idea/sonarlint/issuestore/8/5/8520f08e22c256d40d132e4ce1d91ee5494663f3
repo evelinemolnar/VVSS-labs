@@ -1,9 +1,9 @@
 
-C
-java:S1604"(Make this anonymous inner class a lambda(ùë²¥þÿÿÿÿ
-g
-java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(ÍÎ§˜þÿÿÿÿ
-J
-java:S3655 "5Call "result.isPresent()" before accessing the value.(¼ý¦7
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÎ§˜þÿÿÿÿ
-V	java:S125!"<This block of commented-out lines of code should be removed.(žŠ‘Ÿûÿÿÿÿ
+i
+java:S1604"(Make this anonymous inner class a lambda(ùë²¥þÿÿÿÿJ$3c2e6f30-0f6d-4b19-9b6c-9e39421c544e
+
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(ÍÎ§˜þÿÿÿÿJ$0d35be58-623d-4beb-84ff-461c0e792185
+p
+java:S3655!"5Call "result.isPresent()" before accessing the value.(¼ý¦7J$818a9c35-380a-4c56-bd8c-10f0d9bab63d
+Ž	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÎ§˜þÿÿÿÿJ$1ee3b181-6e64-452d-ad61-806713b7f7a8
+|	java:S125""<This block of commented-out lines of code should be removed.(žŠ‘ŸûÿÿÿÿJ$c682aa3e-2f28-4f0b-bfd0-ace10beebc47

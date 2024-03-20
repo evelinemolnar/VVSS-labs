@@ -27,3 +27,7 @@ k
 +src/main/java/pizzashop/gui/KitchenGUI.java,8\5\8520f08e22c256d40d132e4ce1d91ee5494663f3
 Z
 *src/main/java/pizzashop/gui/OrdersGUI.java,a\d\adc62037ddba64615375bfbd8793cbbef77329f4
+A
+data/payments.txt,d\2\d2a5f732e98cfbd218db5005ce078c2272f24106
+=
+data/menu.txt,f\b\fbf20334545c2b78ecc0732ed388acc897ffe32a

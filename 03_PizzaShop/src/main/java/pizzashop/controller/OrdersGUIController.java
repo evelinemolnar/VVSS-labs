@@ -139,6 +139,15 @@ public class OrdersGUIController {
 
         //Controller for Add to order Button
         addToOrder.setOnAction(event -> {
+            Integer quantity = orderQuantity.getValue();
+            if (quantity == null) {
+                // Dacă nu a fost selectată nicio cantitate, puteți seta o valoare implicită sau afișa un mesaj de eroare
+                System.out.println("Vă rugăm să selectați o cantitate.");
+                // O opțiune ar putea fi să folosiți un dialog de alertă pentru a informa utilizatorul
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Vă rugăm să selectați o cantitate pentru a adăuga la comandă.", ButtonType.OK);
+                alert.showAndWait();
+                return; // Încetați executarea metodei pentru a evita erorile ulterioare
+            }
             orderTable.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<MenuDataModel>(){
             @Override
             public void changed(ObservableValue<? extends MenuDataModel> observable, MenuDataModel oldValue, MenuDataModel newValue){

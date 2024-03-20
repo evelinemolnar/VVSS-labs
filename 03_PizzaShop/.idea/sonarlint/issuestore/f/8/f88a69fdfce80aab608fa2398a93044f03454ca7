@@ -1,10 +1,8 @@
 
-p
-java:S3740"/Provide the parametrized type for this generic.(¬¾Ó¼ıÿÿÿÿJ$737db2f7-81b6-4284-8c2c-fc2a5363448e
-ˆ
-java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦J$a5418241-f1b8-4cb3-ba79-48991a27e049
-Â
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›öÚûÿÿÿÿJ$da76c337-3bb3-4d78-a959-bc22de313239
-w	java:S125"<This block of commented-out lines of code should be removed.(Ñö²J$49af336c-7cca-4378-9ef9-341c7d98fd94
-€
-java:S2147 "DCombine this catch with the one at line 30, which has the same body.(ï­£ÄJ$567dd840-078d-4163-a16b-7e0245f11bcb
+w
+java:S3740"/Provide the parametrized type for this generic.(¬¾Ó¼ıÿÿÿÿ8¥ãÙëå1J$31167276-eabf-4934-93b3-4eba7d777547
+
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦8ØãÙëå1J$9a09f8c6-572f-4350-bce9-b324642d31b7
+É
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›öÚûÿÿÿÿ8ÛãÙëå1J$ec060138-94bb-492c-aba9-0415e295126f
+~	java:S125"<This block of commented-out lines of code should be removed.(Ñö²8æãÙëå1J$fc108848-5a41-4c46-812c-8c42d97b0f60

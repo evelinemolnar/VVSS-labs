@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import pizzashop.exceptions.MenuException;
+import pizzashop.exceptions.PaymentException;
 import pizzashop.model.MenuDataModel;
 import pizzashop.gui.OrdersGUI;
 import pizzashop.service.PaymentAlert;
@@ -64,14 +66,13 @@ public class OrdersGUIController {
 
     public OrdersGUIController(){ }
 
-    public void setService(PizzaService service, int tableNumber){
+    public void setService(PizzaService service, int tableNumber) throws MenuException {
         this.service=service;
         this.tableNumber=tableNumber;
         initData();
-
     }
 
-    private void initData(){
+    private void initData() throws MenuException {
         menuData = FXCollections.observableArrayList(service.getMenuData());
         menuData.setAll(service.getMenuData());
         orderTable.setItems(menuData);
@@ -104,7 +105,11 @@ public class OrdersGUIController {
             System.out.println("Total: " + getTotalAmount());
             System.out.println("--------------------------");
             PaymentAlert pay = new PaymentAlert(service);
-            pay.showPaymentAlert(tableNumber, this.getTotalAmount());
+            try {
+                pay.showPaymentAlert(tableNumber, this.getTotalAmount());
+            } catch (PaymentException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 

@@ -1,5 +1,6 @@
 package pizzashop.repository;
 
+import pizzashop.exceptions.MenuException;
 import pizzashop.model.MenuDataModel;
 
 import java.io.*;
@@ -14,7 +15,7 @@ public class MenuRepository {
     public MenuRepository(){
     }
 
-    private void readMenu(){
+    private void readMenu() throws MenuException {
         //ClassLoader classLoader = MenuRepository.class.getClassLoader();
         File file = new File(filename);
         this.listMenu= new ArrayList();
@@ -28,9 +29,9 @@ public class MenuRepository {
             }
             br.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new MenuException("Could not find the menu file.", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new MenuException("An error occurred while reading the menu.", e);
         }
     }
 
@@ -44,7 +45,7 @@ public class MenuRepository {
         return item;
     }
 
-    public List<MenuDataModel> getMenu(){
+    public List<MenuDataModel> getMenu() throws MenuException {
         readMenu();//create a new menu for each table, on request
         return listMenu;
     }

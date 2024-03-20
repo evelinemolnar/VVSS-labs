@@ -18,7 +18,8 @@ public class KitchenGUI {
         try {
             vBoxKitchen = FXMLLoader.load(getClass().getResource("/fxml/kitchenGUIFXML.fxml"));
         } catch (IOException e) {
-            e.printStackTrace();
+            showAlert("Error", "Failed to load the kitchen view.");
+            return; // Stop execution if the layout cannot be loaded
         }
 
         Stage stage = new Stage();
@@ -47,5 +48,13 @@ public class KitchenGUI {
         stage.setScene(new Scene(vBoxKitchen));
         stage.show();
         stage.toBack();
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

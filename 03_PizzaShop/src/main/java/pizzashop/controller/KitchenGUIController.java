@@ -3,9 +3,13 @@ package pizzashop.controller;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.ScheduledService;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.util.Duration;
+
 import java.util.Calendar;
 
 public class KitchenGUIController {
@@ -21,30 +25,24 @@ public class KitchenGUIController {
     private Calendar now = Calendar.getInstance();
     private String extractedTableNumberString = new String();
     private int extractedTableNumberInteger;
-    //thread for adding data to kitchenOrderList
-    public  Thread addOrders = new Thread(new Runnable() {
+    // ScheduledService for adding data to kitchenOrderList
+    private ScheduledService<Void> addOrdersService = new ScheduledService<Void>() {
         @Override
-        public void run() {
-            while (true) {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        kitchenOrdersList.setItems(order);
-                        }
-                });
-                try {
-                    Thread.sleep(100);
-                  } catch (InterruptedException ex) {
-                    break;
+        protected Task<Void> createTask() {
+            return new Task<Void>() {
+                @Override
+                protected Void call() {
+                    Platform.runLater(() -> kitchenOrdersList.setItems(order));
+                    return null; // Since we're only updating the UI
                 }
-            }
+            };
         }
-    });
+    };
 
     public void initialize() {
-        //starting thread for adding data to kitchenOrderList
-        addOrders.setDaemon(true);
-        addOrders.start();
+        // Configure and start the ScheduledService
+        addOrdersService.setPeriod(Duration.millis(100)); // Set update interval to 100ms
+        addOrdersService.start();
         //Controller for Cook Button
         cook.setOnAction(event -> {
             selectedOrder = kitchenOrdersList.getSelectionModel().getSelectedItem();

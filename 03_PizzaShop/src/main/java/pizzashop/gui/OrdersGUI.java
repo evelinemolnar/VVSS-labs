@@ -3,10 +3,12 @@ package pizzashop.gui;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import pizzashop.controller.OrdersGUIController;
+import pizzashop.exceptions.MenuException;
 import pizzashop.service.PizzaService;
 
 import java.io.IOException;
@@ -28,12 +30,13 @@ public class OrdersGUI {
             vBoxOrders = loader.load();
             OrdersGUIController ordersCtrl= loader.getController();
             ordersCtrl.setService(service, tableNumber);
-
         } catch (IOException e) {
-            e.printStackTrace();
+            showAlert("Error", "Failed to load the orders form.");
+        } catch (MenuException e) {
+            throw new RuntimeException(e);
         }
 
-     Stage stage = new Stage();
+        Stage stage = new Stage();
      stage.setTitle("Table"+getTableNumber()+" order form");
      stage.setResizable(false);
      // disable X on the window
@@ -46,5 +49,13 @@ public class OrdersGUI {
         });
      stage.setScene(new Scene(vBoxOrders));
      stage.show();
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

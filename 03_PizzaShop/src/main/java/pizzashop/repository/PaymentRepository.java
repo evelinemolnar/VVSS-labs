@@ -53,7 +53,6 @@ public class PaymentRepository {
 
     public void add(Payment payment) throws PaymentException {
         paymentList.add(payment);
-        writeAll();
     }
 
     public List<Payment> getAll(){

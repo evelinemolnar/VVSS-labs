@@ -15,27 +15,48 @@ public class PizzaService {
     private MenuRepository menuRepo;
     private PaymentRepository payRepo;
 
-    public PizzaService(MenuRepository menuRepo, PaymentRepository payRepo){
-        this.menuRepo=menuRepo;
-        this.payRepo=payRepo;
+    public PizzaService(MenuRepository menuRepo, PaymentRepository payRepo) {
+        this.menuRepo = menuRepo;
+        this.payRepo = payRepo;
     }
 
-    public List<MenuDataModel> getMenuData() throws MenuException {return menuRepo.getMenu();}
+    public List<MenuDataModel> getMenuData() throws MenuException {
+        return menuRepo.getMenu();
+    }
 
-    public List<Payment> getPayments(){return payRepo.getAll(); }
+    public List<Payment> getPayments() {
+        return payRepo.getAll();
+    }
 
-    public void addPayment(int table, PaymentType type, double amount) throws PaymentException {
-        Payment payment= new Payment(table, type, amount);
+    public void addPayment(int table, String type, double amount) throws PaymentException {
+
+        if (!isPaymentTypeValid(type)) {
+            throw new PaymentException("Invalid type");
+        }
+        PaymentType paymentType = PaymentType.valueOf(type);
+
+        if (amount <= 0) throw new PaymentException("Invalid amount");
+
+        Payment payment = new Payment(table, paymentType, amount);
         payRepo.add(payment);
     }
 
-    public double getTotalAmount(PaymentType type){
-        double total=0.0f;
-        List<Payment> l=getPayments();
-        if ((l==null) ||(l.size()==0)) return total;
-        for (Payment p:l){
+    private boolean isPaymentTypeValid(String type) {
+        try {
+            PaymentType.valueOf(type);
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    public double getTotalAmount(PaymentType type) {
+        double total = 0.0f;
+        List<Payment> l = getPayments();
+        if ((l == null) || (l.size() == 0)) return total;
+        for (Payment p : l) {
             if (p.getType().equals(type))
-                total+=p.getAmount();
+                total += p.getAmount();
         }
         return total;
     }

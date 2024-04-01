@@ -10,8 +10,8 @@ import java.util.Optional;
 public class PaymentAlert implements PaymentOperation {
     private PizzaService service;
 
-    public PaymentAlert(PizzaService service){
-        this.service=service;
+    public PaymentAlert(PizzaService service) {
+        this.service = service;
     }
 
     @Override
@@ -21,6 +21,7 @@ public class PaymentAlert implements PaymentOperation {
         System.out.println("Please insert your card!");
         System.out.println("--------------------------");
     }
+
     @Override
     public void cashPayment() {
         System.out.println("--------------------------");
@@ -28,15 +29,17 @@ public class PaymentAlert implements PaymentOperation {
         System.out.println("Please show the cash...!");
         System.out.println("--------------------------");
     }
+
     @Override
     public void cancelPayment() {
         System.out.println("--------------------------");
         System.out.println("Payment choice needed...");
         System.out.println("--------------------------");
     }
-      public void showPaymentAlert(int tableNumber, double totalAmount ) throws PaymentException {
+
+    public void showPaymentAlert(int tableNumber, double totalAmount) throws PaymentException {
         Alert paymentAlert = new Alert(Alert.AlertType.CONFIRMATION);
-        paymentAlert.setTitle("Payment for Table "+tableNumber);
+        paymentAlert.setTitle("Payment for Table " + tableNumber);
         paymentAlert.setHeaderText("Total amount: " + totalAmount);
         paymentAlert.setContentText("Please choose payment option");
         ButtonType cardPayment = new ButtonType("Pay by Card");
@@ -46,12 +49,12 @@ public class PaymentAlert implements PaymentOperation {
         Optional<ButtonType> result = paymentAlert.showAndWait();
         if (result.get() == cardPayment) {
             cardPayment();
-            service.addPayment(tableNumber, PaymentType.Card,totalAmount);
+            service.addPayment(tableNumber, "Card", totalAmount);
         } else if (result.get() == cashPayment) {
             cashPayment();
-            service.addPayment(tableNumber, PaymentType.Cash,totalAmount);
+            service.addPayment(tableNumber, "Cash", totalAmount);
         } else if (result.get() == cancel) {
-             cancelPayment();
+            cancelPayment();
         } else {
             cancelPayment();
         }

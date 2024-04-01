@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Prj234 - mdir3157_BBT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Prj234<br/>Test Suite: Prj234 - mdir3157_BBT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 02/04/2024</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.mdir3157_BBT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc21126">P234-25: addPayment_ECP_valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21128">P234-26: addPayment_ECP_invalid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21130">P234-27: addPayment_BVA_valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21132">P234-28: addPayment_BVA_invalid</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Testing project for group 234</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : mdir3157_BBT</h1>
+<a name="toc_tc21126"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-25: addPayment_ECP_valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mdir3157</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><table cellspacing="0" style="width:481pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:65pt"><strong>table</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:141pt"><strong>type</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:85pt"><strong>amount</strong></td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:190pt"><strong>expected</strong></td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">1</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">Cash</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">100</td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">record added</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p>A valid type must be either &quot;Cash&quot; or &quot;Card&quot;. We use &quot;Cash&quot; as type for this test.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testValidPaymentWithCash()</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">mdir3157_F01:  mdir3157_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc21128"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-26: addPayment_ECP_invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mdir3157</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><table border="1" cellspacing="0" style="width:481pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:53pt"><strong>table</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:101pt"><strong>type</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:42pt"><strong>amount</strong></td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:180pt"><strong>expected result</strong></td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap; width:65pt">1</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap; width:141pt">&quot;&quot;</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap; width:85pt">100</td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap; width:190pt">Error message-Invalid type</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>A valid type is either &quot;Cash&quot; or &quot;Card&quot;. We use &quot;&quot; as type for this test.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testPaymentWithInvalidType()</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">mdir3157_F01:  mdir3157_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc21130"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-27: addPayment_BVA_valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mdir3157</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><table cellspacing="0" style="width:376pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:53pt"><strong>table</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:101pt"><strong>type</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:42pt"><strong>amount</strong></td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:180pt"><strong>expected result</strong></td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">1</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">Card</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">0.01</td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">record added</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>A valid amount is &gt; 0. We use 0.01 as amount for this test.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testValidPaymentWithValidAmounts()</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">mdir3157_F01:  mdir3157_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc21132"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P234-28: addPayment_BVA_invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">mdir3157</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><table border="1" cellspacing="0" style="width:376pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:53pt"><strong>table</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:101pt"><strong>type</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:42pt"><strong>amount</strong></td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:180pt"><strong>expected result</strong></td>
+		</tr>
+	</tbody>
+</table>
+
+<table border="1" cellspacing="0" style="width:376pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap; width:53pt">1</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap; width:101pt">Card</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap; width:42pt">0</td>
+			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap; width:180pt">Error message-Invalid amount</td>
+		</tr>
+	</tbody>
+</table>
+
+<pre>
+A valid amount is &gt; 0. We use 0 as amount for this test.
+</pre>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" >testInvalidPaymentWithInvalidAmount()</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">mdir3157_F01:  mdir3157_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>

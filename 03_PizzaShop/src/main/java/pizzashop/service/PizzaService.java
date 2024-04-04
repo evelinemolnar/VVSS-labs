@@ -29,6 +29,8 @@ public class PizzaService {
     }
 
     public void addPayment(int table, String type, double amount) throws PaymentException {
+        if (table < 1 || table > 8)
+            throw new PaymentException("Invalid table");
 
         if (!isPaymentTypeValid(type)) {
             throw new PaymentException("Invalid type");

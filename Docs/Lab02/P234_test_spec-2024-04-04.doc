@@ -12,7 +12,7 @@
 <p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
 <div class="doc_title"><p>Test Specification</p></div>
 <div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Prj234<br/>Test Suite: Prj234 - mdir3157_BBT</p></div>
-<div class="summary"><p id="printedby">Printed by TestLink on 02/04/2024</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 04/04/2024</p></div>
 <div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
 <h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.mdir3157_BBT</a></b></p>
 <p style="padding-left: 45px;"><a href="#toc_tc21126">P234-25: addPayment_ECP_valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21128">P234-26: addPayment_ECP_invalid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21130">P234-27: addPayment_BVA_valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc21132">P234-28: addPayment_BVA_invalid</a></p></div><h1 class="doclevel" >Scope</h1>
@@ -41,6 +41,36 @@
 <p>&nbsp;</p>
 
 <p>A valid type must be either &quot;Cash&quot; or &quot;Card&quot;. We use &quot;Cash&quot; as type for this test.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><table cellspacing="0" style="width:455pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:56pt"><strong>No. EC</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:114pt"><strong>Condition</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:133pt"><strong>Valid EC</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:152pt"><strong>Non-valid EC</strong></td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">1</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">type is &quot;Cash&quot; or &quot;Card&quot;</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">type is &quot;Cash&quot; or &quot;Card&quot;</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">3</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">amount is number</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">amount is number</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">5</td>
+			<td rowspan="1" style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">amount &gt; 0</td>
+			<td style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">amount &gt; 0</td>
+			<td style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>type is &quot;Cash&quot; or &quot;Card&quot;, amount is number, amount &gt; 0</p>
 </td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
 <tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
 <tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
@@ -70,6 +100,36 @@
 </table>
 
 <p>A valid type is either &quot;Cash&quot; or &quot;Card&quot;. We use &quot;&quot; as type for this test.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><table cellspacing="0">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:56pt"><strong>No. EC</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:114pt"><strong>Condition</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:133pt"><strong>Valid EC</strong></td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:152pt"><strong>Non-valid EC</strong></td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">2</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">type is &quot;Cash&quot; or &quot;Card&quot;</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">&nbsp;</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">type is not &quot;Cash&quot; or &quot;Card&quot;</td>
+		</tr>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">3</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">amount is number</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">amount is number</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">5</td>
+			<td rowspan="1" style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">amount &gt; 0</td>
+			<td style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">amount &gt; 0</td>
+			<td style="height:15.0pt; text-align:center; vertical-align:middle; white-space:nowrap">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>type is not &quot;Cash&quot; or &quot;Card&quot;, amount is number, amount &gt; 0</p>
 </td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
 <tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
 <tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
@@ -90,15 +150,36 @@
 			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:180pt"><strong>expected result</strong></td>
 		</tr>
 		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">8</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">Cash</td>
 			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">1</td>
-			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">Card</td>
-			<td style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">0.01</td>
 			<td colspan="2" style="height:14.5pt; text-align:center; vertical-align:bottom; white-space:nowrap">record added</td>
 		</tr>
 	</tbody>
 </table>
 
-<p>A valid amount is &gt; 0. We use 0.01 as amount for this test.</p>
+<p>A valid amount is &gt; 0. We use 1 as amount for this test.</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><table cellspacing="0" style="width:298pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:62pt">Crt. No.</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:70pt">Condition</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:166pt">BVA Condition</td>
+		</tr>
+		<tr>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">1</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:70pt">&nbsp;0 &lt; masa &lt; 9</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">03. masa = 8</td>
+		</tr>
+		<tr>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">2</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:70pt">amount &gt; 0</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">05. amount = 1</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>table is 0 &lt; masa &lt; 9, amount &gt;0</p>
 </td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
 <tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
 <tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
@@ -135,6 +216,27 @@
 <pre>
 A valid amount is &gt; 0. We use 0 as amount for this test.
 </pre>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><table cellspacing="0" style="width:298pt">
+	<tbody>
+		<tr>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:62pt">Crt. No.</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:70pt">Condition</td>
+			<td style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap; width:166pt">BVA Condition</td>
+		</tr>
+		<tr>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">1</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:70pt">&nbsp;0 &lt; masa &lt; 9</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">02. masa = 1</td>
+		</tr>
+		<tr>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:nowrap">2</td>
+			<td rowspan="1" style="height:14.5pt; text-align:center; vertical-align:middle; white-space:normal; width:70pt">amount &gt; 0</td>
+			<td style="height:14.5pt; vertical-align:bottom; white-space:nowrap">06. amount = 0</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>table is 0 &lt; masa &lt; 9, amount &lt;=&nbsp;0</p>
 </td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
 <tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
 <tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>

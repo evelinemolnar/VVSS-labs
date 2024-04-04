@@ -22,6 +22,7 @@ class PizzaServiceTest {
     @Test
     @DisplayName("Test valid payment with Cash")
     void testValidPaymentWithCash() {
+        int size = pizzaService.getPayments().size();
         // Arrange
         int table = 1;
         String type = "Cash";
@@ -30,6 +31,7 @@ class PizzaServiceTest {
         // Act & Assert
         assertDoesNotThrow(() -> pizzaService.addPayment(table, type, amount),
                 "A valid payment with type 'Cash' and amount 100 should not throw exception.");
+        assertEquals(1, pizzaService.getPayments().size() - size);
     }
 
     @Test
@@ -64,30 +66,50 @@ class PizzaServiceTest {
         // is not applicable at runtime as it would be a compile-time error.
     }
 
-    @Test
-    @DisplayName("Test valid payment with Card")
-    void testValidPaymentWithCard() {
+    @ParameterizedTest
+    @ValueSource(ints = {1, 8})
+    @DisplayName("Test valid payment with valid table number")
+    void testValidPaymentWithValidTable(int table) {
+        int size = pizzaService.getPayments().size();
         // Arrange
-        int table = 1;
         String type = "Card";
         double amount = 100.0;
 
         // Act & Assert
         assertDoesNotThrow(() -> pizzaService.addPayment(table, type, amount),
                 "A valid payment with type 'Card' and amount 100 should not throw exception.");
+        assertEquals(1, pizzaService.getPayments().size() - size);
     }
 
-    @ParameterizedTest
-    @DisplayName("Test valid payment with valid amount")
-    @ValueSource(doubles = {0.01, 50.0, 100.0})
-    void testValidPaymentWithValidAmounts(double amount) {
+    @Test
+    @DisplayName("Test valid payment with invalid table number")
+    void testValidPaymentWithInValidTable() {
         // Arrange
-        int table = 1;
+        int table = 9;
+        String type = "Card";
+        double amount = 100.0;
+
+        // Act & Assert
+        Exception exception = assertThrows(PaymentException.class, () -> pizzaService.addPayment(table, type, amount),
+                "An invalid table should throw a PaymentException.");
+
+        // Verify that the exception message matches the expected error
+        assertTrue(exception.getMessage().contains("Invalid table"));
+    }
+
+    @Test
+    @DisplayName("Test valid payment with valid amount")
+    void testValidPaymentWithValidAmounts() {
+        int size = pizzaService.getPayments().size();
+        // Arrange
+        int table = 8;
         String type = "Cash";
+        double amount = 1;
 
         // Act & Assert
         assertDoesNotThrow(() -> pizzaService.addPayment(table, type, amount),
-                "A valid payment with type 'Cash' and amount 0.01 should not throw exception.");
+                "A valid payment with type 'Cash' and amount 1 should not throw exception.");
+        assertEquals(1, pizzaService.getPayments().size() - size);
     }
 
     @RepeatedTest(3)
@@ -95,7 +117,7 @@ class PizzaServiceTest {
     void testInvalidPaymentWithInvalidAmount() {
         // Arrange
         int table = 1;
-        String type = "Cash";
+        String type = "Card";
         double amount = 0;
 
         // Act & Assert

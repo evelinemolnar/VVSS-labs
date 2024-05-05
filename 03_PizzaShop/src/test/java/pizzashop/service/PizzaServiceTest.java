@@ -7,15 +7,17 @@ import pizzashop.exceptions.PaymentException;
 import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PizzaServiceTest {
     private PizzaService pizzaService;
 
     @BeforeEach
-    void setUp() throws PaymentException {
-        MenuRepository menuRepository = new MenuRepository();
-        PaymentRepository paymentRepository = new PaymentRepository();
+    void setUp() throws PaymentException, IOException {
+        MenuRepository menuRepository = new MenuRepository("data/menu.txt");
+        PaymentRepository paymentRepository = new PaymentRepository("data/payments.txt");
         pizzaService = new PizzaService(menuRepository, paymentRepository);
     }
 

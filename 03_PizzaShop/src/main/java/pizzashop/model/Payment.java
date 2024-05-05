@@ -5,6 +5,7 @@ public class Payment {
     private int tableNumber;
     private PaymentType type;
     private double amount;
+
     public Payment(int tableNumber, PaymentType type, double amount) {
         this.tableNumber = tableNumber;
         this.type = type;
@@ -37,6 +38,14 @@ public class Payment {
 
     @Override
     public String toString() {
-        return tableNumber + ","+type +"," + amount;
+        return tableNumber + "," + type + "," + amount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Payment payment = (Payment) o;
+        return tableNumber == payment.tableNumber && Double.compare(payment.amount, amount) == 0 && type == payment.type;
     }
 }

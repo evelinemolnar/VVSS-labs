@@ -7,7 +7,8 @@ module pizzashop {
     opens pizzashop.model to javafx.base;
     exports pizzashop.model;
     opens pizzashop to javafx.fxml;
-    exports pizzashop;
+    exports pizzashop.repository;
     opens pizzashop.controller to javafx.fxml;
     exports pizzashop.controller;
+    exports pizzashop.service;
 }

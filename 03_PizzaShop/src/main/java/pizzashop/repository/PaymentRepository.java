@@ -10,13 +10,18 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
-public class PaymentRepository {
-    private static String filename = "data/payments.txt";
+public class PaymentRepository implements IPaymentRepository {
+    private static String filename;
     private List<Payment> paymentList;
 
-    public PaymentRepository() throws PaymentException {
+    public PaymentRepository(String filename) throws IOException, PaymentException {
+        this.filename = filename;
         this.paymentList = new ArrayList<>();
-        readPayments();
+        try {
+            readPayments(); // Attempt to read payments
+        } catch (PaymentException e) {
+            System.err.println("Failed to read payments, starting with empty list: " + e.getMessage());
+        }
     }
 
     private void readPayments() throws PaymentException {
